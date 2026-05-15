@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaultic — Encrypted Photo & PDF Vault</title>
+  <meta name="description" content="Keep your photos and PDFs encrypted on your device. No cloud, no accounts, no servers. AES-256 encrypted, offline only." />
+  <meta property="og:title" content="Vaultic — Encrypted Photo & PDF Vault" />
+  <meta property="og:description" content="No cloud. No accounts. No servers. Photos and PDFs encrypted on your device." />
+  <meta property="og:image" content="assets/icon.png" />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/icon.png" alt="Vaultic icon" />
+      Vaultic
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#pro">Pro</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <img src="assets/icon.png" alt="Vaultic" class="hero-icon" />
+  <h1>Your vault.<br>Your device.<br>Nobody else.</h1>
+  <p>Vaultic keeps your photos and PDFs encrypted on your iPhone with AES-256. No cloud. No account. No servers — ever.</p>
+  <div class="hero-cta">
+    <a href="https://apps.apple.com/app/id000000000" class="btn btn-primary">
+      <!-- Apple icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+    <a href="#features" class="btn btn-secondary">See how it works</a>
+  </div>
+  <div class="hero-badge">
+    <span>🔒 AES-256-GCM</span>
+    <span>📵 Zero network requests</span>
+    <span>🚫 No account needed</span>
+    <span>🇺🇸 Made with ❤️</span>
+  </div>
+</section>
+
+<!-- ── Features ── -->
+<section id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+    <p class="section-sub">Vaultic is designed to be simple, secure, and completely offline.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>AES-256 Encryption</h3>
+        <p>Every file is encrypted with AES-GCM before touching your disk. Each blob gets a unique random nonce — no two files look the same.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📵</div>
+        <h3>Truly Offline</h3>
+        <p>Zero internet requests. No backend, no analytics, no telemetry. A build-time script fails the build if any networking API is ever added.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎭</div>
+        <h3>Decoy Vault</h3>
+        <p>A second PIN opens a separate, empty vault. Useful if someone forces you to unlock. Your real vault stays hidden.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>Verified Writes</h3>
+        <p>Every import is encrypted, re-read, and SHA-256 verified before you're offered the option to delete the original. Nothing is lost silently.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📲</div>
+        <h3>Device Transfer</h3>
+        <p>Move your vault to a new iPhone over local Wi-Fi — no cloud, no cable, no account. Both devices confirm a pairing code first.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">♻️</div>
+        <h3>Recently Deleted</h3>
+        <p>Deleted items stay in a 30-day holding bin before permanent removal — matching the grace period Apple provides in the Photos app.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Recovery Key</h3>
+        <p>Set up a 24-word phrase as a backup. If you ever forget your PIN, the recovery key is your only way back in — by design.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💊</div>
+        <h3>Vault Health</h3>
+        <p>A background integrity job silently re-decrypts and re-hashes every item to detect corruption before you notice it.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗂️</div>
+        <h3>Albums</h3>
+        <p>Organize photos and PDFs into custom albums with optional per-album PIN locks. Pro feature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Security ── -->
+<section id="security" class="security-section">
+  <div class="container">
+    <div class="section-label">Security Model</div>
+    <h2 class="section-title">Open, verifiable, uncompromising.</h2>
+    <p class="section-sub">We don't ask you to trust us. Here's exactly how it works.</p>
+
+    <div class="security-grid">
+      <ul class="security-list">
+        <li>
+          <span class="check"></span>
+          <span><strong>AES-GCM 256-bit</strong> encryption for every file. Unique nonce per blob. Authentication tag failure = wrong PIN.</span>
+        </li>
+        <li>
+          <span class="check"></span>
+          <span><strong>PBKDF2-HMAC-SHA256</strong> with 200,000 iterations to derive the wrapping key from your PIN.</span>
+        </li>
+        <li>
+          <span class="check"></span>
+          <span><strong>Master key never stored</strong> in cleartext. Wrapped in the iOS Keychain under <code class="code-inline">kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code>.</span>
+        </li>
+        <li>
+          <span class="check"></span>
+          <span><strong>10-attempt wipe.</strong> Ten consecutive wrong PINs permanently delete the master key. No recovery without your phrase.</span>
+        </li>
+        <li>
+          <span class="check"></span>
+          <span><strong>Privacy overlay</strong> covers the UI in the App Switcher. What you have stays private.</span>
+        </li>
+        <li>
+          <span class="check"></span>
+          <span><strong>Auto-lock</strong> zeroes the in-memory master key when the app backgrounds. Configurable delay.</span>
+        </li>
+      </ul>
+
+      <div class="code-block">
+        <span class="comment"># On-disk format for every encrypted blob</span><br>
+        nonce[12] || ciphertext || tag[16]<br><br>
+        <span class="comment"># Master key derivation</span><br>
+        salt ← SecRandomCopyBytes(16)<br>
+        wrapping_key ← PBKDF2(PIN, salt, 200_000)<br>
+        wrapped ← AES-GCM.seal(master_key, wrapping_key)<br><br>
+        <span class="comment"># Keychain storage</span><br>
+        kSecAttrAccessible:<br>
+        &nbsp;&nbsp;WhenUnlockedThisDeviceOnly<br>
+        kSecAttrSynchronizable: false
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pro ── -->
+<section id="pro">
+  <div class="container">
+    <div class="section-label">Vaultic Pro</div>
+    <h2 class="section-title">Go further with Pro.</h2>
+    <p class="section-sub">One-time or subscription — your choice. Free tier is fully functional for everyday use.</p>
+
+    <div class="pro-card">
+      <h3>✨ Vaultic Pro</h3>
+      <p>Unlock advanced features for power users and anyone who wants extra peace of mind.</p>
+      <div class="pro-features">
+        <span class="pro-pill">☁️ Encrypted iCloud backup</span>
+        <span class="pro-pill">📂 Custom albums</span>
+        <span class="pro-pill">📄 PDF imports up to 2 GB</span>
+        <span class="pro-pill">⏱ Custom auto-lock</span>
+        <span class="pro-pill">🎨 Custom app icon</span>
+        <span class="pro-pill">🚨 Panic gesture</span>
+        <span class="pro-pill">🔄 Always-free restore</span>
+      </div>
+      <a href="https://apps.apple.com/app/id000000000" class="btn btn-primary">
+        Get Pro — from $5.99/month
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="https://apps.apple.com/app/id000000000">App Store</a></li>
+    </ul>
+    <p>© 2026 Vaultic. Made with care. No data collected.</p>
+  </div>
+</footer>
+
+</body>
+</html>

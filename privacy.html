@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Vaultic</title>
+  <meta name="description" content="Vaultic collects no personal data, contacts no servers, and contains no third-party SDKs. Everything stays on your device." />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/icon.png" alt="Vaultic icon" />
+      Vaultic
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: May 2026</p>
+</div>
+
+<div class="page-content">
+
+  <h2>Summary</h2>
+  <p>Vaultic collects <strong>no personal data</strong>, contacts no servers, and contains no third-party SDKs. Everything stays on your device.</p>
+
+  <h2>What we collect</h2>
+  <p><strong>Nothing.</strong> We do not collect, transmit, store, or share any personal data, usage data, analytics, crash reports, or identifiers of any kind.</p>
+
+  <h2>Network requests</h2>
+  <p>The app makes <strong>zero</strong> outbound network requests. There is no backend, no CDN, no telemetry endpoint, no analytics service, no remote configuration.</p>
+  <p>A build-phase script in the project fails the build if any networking API (URLSession, NSURLConnection, CFNetwork, etc.) appears anywhere in the source code outside of the local-network Device Transfer feature. You can verify this yourself by reviewing the source.</p>
+
+  <h2>Where your data lives</h2>
+  <p>All encrypted files, metadata, and keys live entirely on your device:</p>
+  <ul>
+    <li>Encrypted blobs: <code class="code-inline">Library/Application Support/vault-real/blobs/</code></li>
+    <li>Encrypted metadata: <code class="code-inline">Library/Application Support/vault-real/vault.sqlite</code></li>
+    <li>Master key (wrapped): iOS Keychain under <code class="code-inline">kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code></li>
+  </ul>
+  <p>The Keychain attribute <code class="code-inline">kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code> prevents iCloud Keychain sync and backup, and prevents the key from being restored to a different device.</p>
+
+  <h2>iCloud</h2>
+  <p>Vaultic opts out of iCloud for its SwiftData store (<code class="code-inline">cloudKitDatabase: .none</code>). Vault files are stored in Application Support, which is not automatically iCloud-backed.</p>
+  <p>Pro subscribers can opt in to <strong>encrypted iCloud Drive backup</strong>. If you enable this feature, your vault is exported as an encrypted archive and uploaded to your personal iCloud Drive. The archive is AES-256-GCM encrypted on-device before upload — Apple's servers only ever see opaque ciphertext. The decryption key never leaves your device.</p>
+
+  <h2>Local backups (iTunes / Finder)</h2>
+  <p>Local backups created via iTunes or Finder may include the encrypted blobs. The master key remains in the iOS Keychain, which is excluded from unencrypted device backups — the blobs are useless without the key.</p>
+
+  <h2>Cryptography</h2>
+  <p>The cryptographic core uses only Apple-provided frameworks (CryptoKit, CommonCrypto): AES-GCM 256-bit encryption, PBKDF2-HMAC-SHA256 key derivation (200,000 iterations), and SHA-256 integrity verification. No proprietary encryption is implemented.</p>
+
+  <h2>Third-party SDKs</h2>
+  <p>None. Vaultic contains no third-party SDKs, no analytics libraries, no crash reporters, and no advertising frameworks.</p>
+
+  <h2>In-App Purchases</h2>
+  <p>Purchase transactions are handled entirely by Apple's StoreKit framework. We never see your payment information. Apple's privacy policy governs purchase data.</p>
+
+  <h2>Children</h2>
+  <p>Vaultic is not directed at children under 13 and we do not knowingly collect information from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted at this URL with a new "Last updated" date. We will not retroactively reduce your privacy protections.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy? See our <a href="support.html">support page</a> or email <a href="mailto:support@vaulticapp.com">support@vaulticapp.com</a>.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="https://apps.apple.com/app/id000000000">App Store</a></li>
+    </ul>
+    <p>© 2026 Vaultic. Made with care. No data collected.</p>
+  </div>
+</footer>
+
+</body>
+</html>

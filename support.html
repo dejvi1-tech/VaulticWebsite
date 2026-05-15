@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Vaultic</title>
+  <meta name="description" content="Get help with Vaultic. Frequently asked questions, troubleshooting, and contact information." />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/icon.png" alt="Vaultic icon" />
+      Vaultic
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label">Help</p>
+  <h1>Support</h1>
+  <p>Answers to the most common questions about Vaultic.</p>
+</div>
+
+<div class="page-content">
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>🔑 I forgot my PIN. Can I get back in?</h3>
+    <p>If you set up a <strong>recovery key</strong> before forgetting your PIN, yes. On the lock screen tap <strong>"Forgot PIN?"</strong>, enter your 24-word phrase, and you'll be asked to create a new PIN immediately.</p>
+    <p>If you did not set up a recovery key, there is no recovery path — this is intentional. The vault is designed so that only the PIN holder can decrypt it. In this case you'll need to delete and reinstall the app to start fresh.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>📝 I set up a recovery key. Where is it stored?</h3>
+    <p>Nowhere by us. The 24-word phrase is shown to you exactly once — you must write it down and keep it safe. A copy of the master key wrapped by the phrase is stored in the iOS Keychain on your device only. We never transmit, log, or see the phrase.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>🗑️ What happens if I uninstall the app?</h3>
+    <p>All encrypted files and metadata are deleted with the app. The iOS Keychain entries (wrapped master key, biometric secret) survive uninstall by default on iOS — this is iOS behaviour, not specific to Vaultic. To fully clear them, reinstall the app and use the Erase Vault option in Settings, which explicitly deletes the Keychain entries.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>☁️ Is my vault backed up to iCloud?</h3>
+    <p>By default, <strong>no</strong>. Vault files are stored in Application Support which iCloud does not back up automatically, and the app explicitly opts out of CloudKit sync.</p>
+    <p>With <strong>Vaultic Pro</strong>, you can enable optional encrypted iCloud Drive backup. The backup is AES-256-GCM encrypted on your device before upload — Apple only ever receives opaque ciphertext. The decryption key never leaves your device.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>📵 How can I verify the app makes no network requests?</h3>
+    <p>Three ways:</p>
+    <ul>
+      <li><strong>Build script:</strong> the project has a pre-build shell script ("Zero-telemetry guard") that greps the source for networking symbols and <em>fails the build</em> if any are found.</li>
+      <li><strong>Source code:</strong> there are no URLSession, NSURLConnection, or CFNetwork calls anywhere in the app outside of the local-network Device Transfer feature.</li>
+      <li><strong>Charles / mitmproxy:</strong> set your device's HTTP proxy to a local proxy and run the app. You will see zero outbound requests.</li>
+    </ul>
+  </div>
+
+  <div class="faq-item">
+    <h3>🔒 Where do my encrypted files actually live on disk?</h3>
+    <p>Inside the iOS Application Support container:</p>
+    <ul>
+      <li><code class="code-inline">Library/Application Support/vault-real/blobs/</code> — encrypted file blobs</li>
+      <li><code class="code-inline">Library/Application Support/vault-real/vault.sqlite</code> — encrypted metadata</li>
+    </ul>
+    <p>Every file has <code class="code-inline">NSFileProtectionComplete</code> set, meaning the OS hardware encryption key is unavailable while the device is locked.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>🎭 What is the Decoy Vault?</h3>
+    <p>A second, completely separate vault protected by a different PIN. When you enter the decoy PIN on the lock screen, the app opens a different vault — empty, or populated with non-sensitive content you choose. The real vault stays hidden. The real vault's wrong-PIN counter still increments when the real PIN is tried, so the decoy unlock doesn't slow down the brute-force protection on the real vault.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>💳 How do I manage or cancel my Pro subscription?</h3>
+    <p>Subscriptions are managed entirely through Apple. Go to <strong>Settings → [your name] → Subscriptions</strong> on your iPhone to view, change, or cancel your Vaultic Pro subscription. We have no access to your subscription or payment details.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>🔄 I cancelled Pro. Can I still access my backed-up files?</h3>
+    <p>Yes — always. Restore is free forever, even after cancelling Pro. You can download and decrypt any backup you created while subscribed at any time.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>📲 How does Device Transfer work?</h3>
+    <p>Device Transfer moves your entire vault directly to another iPhone over your local Wi-Fi network. No cloud, no cable, no account needed. Both devices must be on the same Wi-Fi network, and both confirm a one-time pairing code before any data moves. The transfer is end-to-end encrypted — the vault data is encrypted before it leaves the source device and remains encrypted in transit.</p>
+  </div>
+
+  <div class="contact-card">
+    <h2>Still need help?</h2>
+    <p>Can't find the answer above? Send us an email and we'll get back to you.</p>
+    <a href="mailto:support@vaulticapp.com" class="btn btn-primary">
+      ✉️ Email Support
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="https://apps.apple.com/app/id000000000">App Store</a></li>
+    </ul>
+    <p>© 2026 Vaultic. Made with care. No data collected.</p>
+  </div>
+</footer>
+
+</body>
+</html>
