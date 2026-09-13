@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Vaultic</title>
-  <meta name="description" content="Vaultic collects no personal data, contacts no servers, and contains no third-party SDKs. Everything stays on your device." />
+  <meta name="description" content="Vaultic operates no server and never uses your vault for advertising. Vault files are encrypted on your device. The free version may show ads from Google AdMob." />
   <link rel="icon" href="assets/icon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,20 +27,51 @@
 <div class="page-hero">
   <p class="section-label">Legal</p>
   <h1>Privacy Policy</h1>
-  <p>Last updated: May 2026</p>
+  <p>Last updated: September 2026</p>
 </div>
 
 <div class="page-content">
 
   <h2>Summary</h2>
-  <p>Vaultic collects <strong>no personal data</strong>, contacts no servers, and contains no third-party SDKs. Everything stays on your device.</p>
+  <p>There is <strong>no Vaultic server</strong> — we operate no backend that receives, stores, or processes your vault, and there is no account. We do not receive or store your personal data, and Vaultic contains no analytics or telemetry SDK of its own. Your vault files are encrypted on your device and are <strong>never used for advertising</strong>.</p>
+  <p>The free version of Vaultic may show ads from Google AdMob. Google may process some device, network, and advertising-related information to provide those ads, as described under "Advertising" below. Vaultic Pro and Lifetime remove ads.</p>
+  <p>Vaultic is <strong>not</strong> an offline-only app, and we won't describe it as one. It uses the network for four features, each only when you choose to use it, and for ads in the free version. They are listed under "When Vaultic uses the network" below.</p>
 
   <h2>What we collect</h2>
-  <p><strong>Nothing.</strong> We do not collect, transmit, store, or share any personal data, usage data, analytics, crash reports, or identifiers of any kind.</p>
+  <p><strong>We collect nothing ourselves.</strong> We have no server, so we do not receive or store any personal data, usage data, analytics, crash reports, or identifiers from the app.</p>
+  <p>In the free version, Vaultic includes Google's advertising SDK, which collects some information directly for Google in order to serve and measure ads. This is described under "Advertising" below. It never includes your vault contents.</p>
+  <p>If you have enabled Apple's "Share With App Developers" setting on your device, iOS may deliver aggregated performance and crash diagnostics to Apple's developer tools. That is an Apple mechanism you control in iOS Settings; it never includes your vault contents, filenames, or keys, and Vaultic sends nothing itself.</p>
 
-  <h2>Network requests</h2>
-  <p>The app makes <strong>zero</strong> outbound network requests. There is no backend, no CDN, no telemetry endpoint, no analytics service, no remote configuration.</p>
-  <p>A build-phase script in the project fails the build if any networking API (URLSession, NSURLConnection, CFNetwork, etc.) appears anywhere in the source code outside of the local-network Device Transfer feature. You can verify this yourself by reviewing the source.</p>
+  <h2>When Vaultic uses the network</h2>
+  <p>Four features reach the network. Each is initiated by you:</p>
+  <ul>
+    <li><strong>Private Browser.</strong> When you browse inside Vaultic, the app loads the pages you request directly from those websites, exactly as any browser does. Vaultic uses a non-persistent browsing session, so cookies, cache, and history from that session are not retained inside Vaultic once it ends, and a built-in rule list blocks common third-party trackers. This reduces the traces kept <em>inside Vaultic</em>. It does not make you anonymous to the websites you visit, your internet provider, your network operator, a VPN provider, or anyone else on the network path.</li>
+    <li><strong>Encrypted iCloud Backup</strong> (optional, Pro). If you enable it, your vault is exported as an AES-256-GCM encrypted archive and uploaded to <em>your own</em> iCloud Drive. Apple's servers hold only opaque ciphertext. The decryption key never leaves your device. This feature is off unless you turn it on.</li>
+    <li><strong>Device Transfer</strong> (optional, Pro). Sends an encrypted copy of your vault directly to another device you pair with, over your local network only. Both devices confirm a one-time pairing code first. It does not route through the internet or any server.</li>
+    <li><strong>In-app purchases.</strong> Handled entirely by Apple's StoreKit. Vaultic never sees your payment details.</li>
+  </ul>
+  <p><strong>Advertising</strong> (free version only). The free version may load ads from Google AdMob, which means the app connects to Google's ad servers while you use it. Your vault contents are never sent with these requests. See "Advertising" below. Vaultic Pro and Lifetime remove ads.</p>
+  <p>Apart from advertising, Vaultic does not use the network unless you open the Private Browser, enable iCloud Backup, run a Device Transfer, or make a purchase.</p>
+  <p>A build-phase script fails the build if a general-purpose networking API (URLSession, CFNetwork, and similar) or any known analytics SDK appears anywhere in the source, and it confines each path above — advertising included — to the single part of the code that owns it. The same script bans the advertising identifier everywhere in our own code and rejects any ad-targeting field. You can verify this by reviewing the source.</p>
+
+  <h2 id="advertising">Advertising</h2>
+  <p>The free version of Vaultic may display ads provided by <strong>Google AdMob</strong>. A Vaultic Pro subscription (monthly or yearly) or the one-time Lifetime purchase removes ads.</p>
+  <p>To deliver and measure ads, Google may collect and process device, network, and advertising-related information from your device. Google handles this information under its own policies, not this one — see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>. Depending on where you are and the choices available to you, ads may be personalized or non-personalized.</p>
+  <p><strong>Your vault is never used for advertising.</strong> Vaultic does not use your private vault contents to target ads, and does not send any of the following to Google for ad targeting:</p>
+  <ul>
+    <li>Vault photos, videos, and documents</li>
+    <li>Album names</li>
+    <li>Your PIN</li>
+    <li>Your recovery key or other recovery information</li>
+    <li>Private Browser URLs</li>
+  </ul>
+  <p><strong>Personalisation and your choices.</strong> Where you allow it, ads may be personalised. Where you do not, Google serves another eligible ad mode instead, such as non-personalised or limited ads. How you are asked depends on where you are:</p>
+  <ul>
+    <li><strong>European Economic Area, UK and Switzerland.</strong> Google's User Messaging Platform — Google's certified consent management platform — presents Google's own consent message before any ad is requested. You can reopen it at any time from <strong>Settings → Privacy Choices</strong> in the app.</li>
+    <li><strong>United States.</strong> Where state privacy laws apply, the same Google message presents your state privacy choices, including choices about the sale or sharing of personal information for advertising. It is also reachable from <strong>Settings → Privacy Choices</strong>.</li>
+    <li><strong>App Tracking Transparency (iOS).</strong> A personalised ad counts as tracking under Apple's rules, so the free version shows Apple's tracking permission prompt. Declining it — or never answering — does not affect the app: Google simply requests ads without your device's advertising identifier. Vaultic's own code never reads that identifier. You can change your answer at any time in iOS <strong>Settings → Privacy &amp; Security → Tracking</strong>.</li>
+  </ul>
+  <p>Vaultic Pro and Lifetime never request an ad, so they are never asked for advertising consent and never see Apple's tracking prompt.</p>
 
   <h2>Where your data lives</h2>
   <p>All encrypted files, metadata, and keys live entirely on your device:</p>
@@ -52,8 +83,8 @@
   <p>The Keychain attribute <code class="code-inline">kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code> prevents iCloud Keychain sync and backup, and prevents the key from being restored to a different device.</p>
 
   <h2>iCloud</h2>
-  <p>Vaultic opts out of iCloud for its SwiftData store (<code class="code-inline">cloudKitDatabase: .none</code>). Vault files are stored in Application Support, which is not automatically iCloud-backed.</p>
-  <p>Pro subscribers can opt in to <strong>encrypted iCloud Drive backup</strong>. If you enable this feature, your vault is exported as an encrypted archive and uploaded to your personal iCloud Drive. The archive is AES-256-GCM encrypted on-device before upload — Apple's servers only ever see opaque ciphertext. The decryption key never leaves your device.</p>
+  <p>Vaultic does not sync your vault to iCloud automatically. Its local database opts out of iCloud (<code class="code-inline">cloudKitDatabase: .none</code>), and vault files are stored in Application Support, which is not automatically iCloud-backed.</p>
+  <p>Pro subscribers can opt in to <strong>encrypted iCloud Drive backup</strong>. If you enable this feature, your vault is exported as an encrypted archive and uploaded to your personal iCloud Drive. The archive is AES-256-GCM encrypted on-device before upload — Apple's servers only ever see opaque ciphertext. The decryption key never leaves your device. Nothing is uploaded unless you enable it.</p>
 
   <h2>Local backups (iTunes / Finder)</h2>
   <p>Local backups created via iTunes or Finder may include the encrypted blobs. The master key remains in the iOS Keychain, which is excluded from unencrypted device backups — the blobs are useless without the key.</p>
@@ -62,19 +93,22 @@
   <p>The cryptographic core uses only Apple-provided frameworks (CryptoKit, CommonCrypto): AES-GCM 256-bit encryption, PBKDF2-HMAC-SHA256 key derivation (200,000 iterations), and SHA-256 integrity verification. No proprietary encryption is implemented.</p>
 
   <h2>Third-party SDKs</h2>
-  <p>None. Vaultic contains no third-party SDKs, no analytics libraries, no crash reporters, and no advertising frameworks.</p>
+  <p>The free version includes two Google SDKs, both shipped inside the app: the <strong>Google Mobile Ads SDK</strong> (AdMob), which shows the ads, and Google's <strong>User Messaging Platform</strong>, Google's certified consent management platform, which presents the consent and privacy-choice messages described under "Advertising" above. There is no ad mediation and no other ad network. Beyond those, Vaultic contains no analytics libraries and no attribution frameworks, and we switch off the ad SDK's own crash reporting.</p>
+
+  <h2>Web content in the Private Browser</h2>
+  <p>Websites you visit in the Private Browser are third parties and set their own terms. What they collect is governed by their privacy policies, not this one. Vaultic does not read, log, or transmit your browsing activity, and does not associate it with your vault.</p>
 
   <h2>In-App Purchases</h2>
   <p>Purchase transactions are handled entirely by Apple's StoreKit framework. We never see your payment information. Apple's privacy policy governs purchase data.</p>
 
   <h2>Children</h2>
-  <p>Vaultic is not directed at children under 13 and we do not knowingly collect information from children.</p>
+  <p>Vaultic includes a browser with unrestricted access to the web and is rated accordingly on the App Store. It is not directed at children, and we do not knowingly collect personal information from children.</p>
 
   <h2>Changes to this policy</h2>
   <p>If this policy changes, the updated version will be posted at this URL with a new "Last updated" date. We will not retroactively reduce your privacy protections.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy? See our <a href="support.html">support page</a> or email <a href="mailto:support@vaulticapp.com">support@vaulticapp.com</a>.</p>
+  <p>Questions about this policy? See our <a href="support.html">support page</a> or email <a href="mailto:support@vaulticapp.com" data-support-email>support@vaulticapp.com</a>.</p>
 
 </div>
 
@@ -84,11 +118,13 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="https://apps.apple.com/app/id000000000">App Store</a></li>
+      <li><a href="#" data-appstore-link>App Store</a></li>
     </ul>
-    <p>© 2026 Vaultic. Made with care. No data collected.</p>
+    <p>© 2026 Vaultic. Made with care. Your vault is encrypted on your device and never used for ads. The free version may show ads from Google AdMob.</p>
   </div>
 </footer>
+
+<script src="assets/config.js"></script>
 
 </body>
 </html>

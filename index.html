@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaultic — Encrypted Photo & PDF Vault</title>
-  <meta name="description" content="Keep your photos and PDFs encrypted on your device. No cloud, no accounts, no servers. AES-256 encrypted, offline only." />
+  <meta name="description" content="Encrypted photo, video and PDF vault for iPhone. AES-256-GCM, encrypted locally. No Vaultic server, no account, no analytics of our own." />
   <meta property="og:title" content="Vaultic — Encrypted Photo & PDF Vault" />
-  <meta property="og:description" content="No cloud. No accounts. No servers. Photos and PDFs encrypted on your device." />
+  <meta property="og:description" content="Private by design. Encrypted locally. No Vaultic server, no account, no analytics of our own." />
   <meta property="og:image" content="assets/icon.png" />
   <link rel="icon" href="assets/icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -23,6 +23,7 @@
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#security">Security</a></li>
+      <li><a href="#network">Network</a></li>
       <li><a href="#pro">Pro</a></li>
       <li><a href="support.html">Support</a></li>
       <li><a href="privacy.html">Privacy</a></li>
@@ -34,9 +35,9 @@
 <section class="hero">
   <img src="assets/icon.png" alt="Vaultic" class="hero-icon" />
   <h1>Your vault.<br>Your device.<br>Nobody else.</h1>
-  <p>Vaultic keeps your photos and PDFs encrypted on your iPhone with AES-256. No cloud. No account. No servers — ever.</p>
+  <p>Vaultic encrypts your photos, videos and PDFs on your iPhone with AES-256-GCM. No Vaultic server. No account. No analytics or telemetry of our own.</p>
   <div class="hero-cta">
-    <a href="https://apps.apple.com/app/id000000000" class="btn btn-primary">
+    <a href="#" data-appstore-link class="btn btn-primary">
       <!-- Apple icon -->
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       Download on the App Store
@@ -45,9 +46,9 @@
   </div>
   <div class="hero-badge">
     <span>🔒 AES-256-GCM</span>
-    <span>📵 Zero network requests</span>
+    <span>🚫 No Vaultic server</span>
     <span>🚫 No account needed</span>
-    <span>🇺🇸 Made with ❤️</span>
+    <span>📊 No analytics of our own</span>
   </div>
 </section>
 
@@ -56,7 +57,7 @@
   <div class="container">
     <div class="section-label">Features</div>
     <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
-    <p class="section-sub">Vaultic is designed to be simple, secure, and completely offline.</p>
+    <p class="section-sub">Simple, secure, and private by design.</p>
 
     <div class="features-grid">
       <div class="feature-card">
@@ -65,14 +66,14 @@
         <p>Every file is encrypted with AES-GCM before touching your disk. Each blob gets a unique random nonce — no two files look the same.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📵</div>
-        <h3>Truly Offline</h3>
-        <p>Zero internet requests. No backend, no analytics, no telemetry. A build-time script fails the build if any networking API is ever added.</p>
+        <div class="feature-icon">🚫</div>
+        <h3>No Vaultic Server</h3>
+        <p>We run no backend that can receive, store, or read your vault. There is no account, and no analytics or telemetry SDK of our own — a build-time script fails the build if one is ever added. The free version does ship Google's ad and consent SDKs; Pro and Lifetime never start them.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🎭</div>
-        <h3>Decoy Vault</h3>
-        <p>A second PIN opens a separate, empty vault. Useful if someone forces you to unlock. Your real vault stays hidden.</p>
+        <div class="feature-icon">🕵️</div>
+        <h3>Private Browser</h3>
+        <p>Browse inside Vaultic on a non-persistent session, with common third-party trackers blocked. Browsing data isn't kept by Vaultic after the session ends.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✅</div>
@@ -102,7 +103,7 @@
       <div class="feature-card">
         <div class="feature-icon">🗂️</div>
         <h3>Albums</h3>
-        <p>Organize photos and PDFs into custom albums with optional per-album PIN locks. Pro feature.</p>
+        <p>Organize photos and videos into custom albums. Create up to 2 for free; Vaultic Pro adds unlimited albums and per-album PIN locks.</p>
       </div>
     </div>
   </div>
@@ -159,27 +160,72 @@
   </div>
 </section>
 
+<!-- ── Network transparency ── -->
+<section id="network">
+  <div class="container">
+    <div class="section-label">Network</div>
+    <h2 class="section-title">When Vaultic uses the internet.</h2>
+    <p class="section-sub">Vaultic is not an offline-only app, and we won't pretend otherwise. Here is every network path, and what it carries.</p>
+
+    <ul class="security-list">
+      <li>
+        <span class="check"></span>
+        <span><strong>No Vaultic server.</strong> We operate no backend that receives, stores, or processes your vault. There is no account. We cannot read your files.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>No analytics or telemetry of our own.</strong> No analytics SDK, no attribution framework, no remote configuration. The free version's ad SDK is Google's, and we switch its crash reporting off.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>Private Browser</strong> loads the pages you visit, directly from those sites — like any browser.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>Encrypted iCloud Backup</strong> (optional, Pro) uploads a passphrase-sealed archive to <em>your</em> iCloud. Apple holds ciphertext; the key stays on your device.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>Device Transfer</strong> (optional, Pro) sends an encrypted copy to a device you pair with, over your local network only.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>Purchases</strong> go through Apple's App Store. We never see your payment details.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>Ads</strong> (free version only) may be loaded from Google AdMob, with Google's consent SDK alongside it. Ads may be personalised where you allow it, which on iOS means the free version asks for Apple's tracking permission — declining costs nothing but the advertising identifier. Your vault contents are never sent to Google for advertising. Vaultic Pro and Lifetime remove ads entirely.</span>
+      </li>
+      <li>
+        <span class="check"></span>
+        <span><strong>Nothing else.</strong> Apart from ads in the free version, if you never open the Private Browser, never enable iCloud Backup, never run a transfer, and never buy Pro, Vaultic doesn't use the network.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <!-- ── Pro ── -->
 <section id="pro">
   <div class="container">
     <div class="section-label">Vaultic Pro</div>
     <h2 class="section-title">Go further with Pro.</h2>
-    <p class="section-sub">One-time or subscription — your choice. Free tier is fully functional for everyday use.</p>
+    <p class="section-sub">Subscribe monthly or yearly, or buy Vaultic Pro once. The free tier is a complete vault — unlimited photos, videos and documents, encryption, Face&nbsp;ID and 2 albums — and may show ads; Pro removes them.</p>
 
     <div class="pro-card">
       <h3>✨ Vaultic Pro</h3>
       <p>Unlock advanced features for power users and anyone who wants extra peace of mind.</p>
       <div class="pro-features">
         <span class="pro-pill">☁️ Encrypted iCloud backup</span>
-        <span class="pro-pill">📂 Custom albums</span>
+        <span class="pro-pill">📂 Unlimited albums &amp; album locks</span>
         <span class="pro-pill">📄 PDF imports up to 2 GB</span>
         <span class="pro-pill">⏱ Custom auto-lock</span>
         <span class="pro-pill">🎨 Custom app icon</span>
         <span class="pro-pill">🚨 Panic gesture</span>
         <span class="pro-pill">🔄 Always-free restore</span>
+        <span class="pro-pill">🚫 No ads</span>
       </div>
-      <a href="https://apps.apple.com/app/id000000000" class="btn btn-primary">
-        Get Pro — from $5.99/month
+      <a href="#" data-appstore-link class="btn btn-primary">
+        Get Vaultic Pro
       </a>
     </div>
   </div>
@@ -192,11 +238,13 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="https://apps.apple.com/app/id000000000">App Store</a></li>
+      <li><a href="#" data-appstore-link>App Store</a></li>
     </ul>
-    <p>© 2026 Vaultic. Made with care. No data collected.</p>
+    <p>© 2026 Vaultic. Made with care. Your vault is encrypted on your device and never used for ads. The free version may show ads from Google AdMob.</p>
   </div>
 </footer>
+
+<script src="assets/config.js"></script>
 
 </body>
 </html>

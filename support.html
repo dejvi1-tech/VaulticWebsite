@@ -52,18 +52,29 @@
 
   <div class="faq-item">
     <h3>☁️ Is my vault backed up to iCloud?</h3>
-    <p>By default, <strong>no</strong>. Vault files are stored in Application Support which iCloud does not back up automatically, and the app explicitly opts out of CloudKit sync.</p>
+    <p>By default, <strong>no</strong>. Vault files are stored in Application Support, which iCloud does not back up automatically, and the app does not sync your vault to iCloud on its own.</p>
     <p>With <strong>Vaultic Pro</strong>, you can enable optional encrypted iCloud Drive backup. The backup is AES-256-GCM encrypted on your device before upload — Apple only ever receives opaque ciphertext. The decryption key never leaves your device.</p>
   </div>
 
   <div class="faq-item">
-    <h3>📵 How can I verify the app makes no network requests?</h3>
-    <p>Three ways:</p>
+    <h3>🌐 Does Vaultic use the internet?</h3>
+    <p>Yes. There is <strong>no Vaultic server</strong>: we operate no backend that can receive, store, or read your vault, there is no account, and there is no analytics or telemetry SDK of our own. Four features reach the network, each only when you choose to use it:</p>
     <ul>
-      <li><strong>Build script:</strong> the project has a pre-build shell script ("Zero-telemetry guard") that greps the source for networking symbols and <em>fails the build</em> if any are found.</li>
-      <li><strong>Source code:</strong> there are no URLSession, NSURLConnection, or CFNetwork calls anywhere in the app outside of the local-network Device Transfer feature.</li>
-      <li><strong>Charles / mitmproxy:</strong> set your device's HTTP proxy to a local proxy and run the app. You will see zero outbound requests.</li>
+      <li><strong>Private Browser</strong> — loads the pages you visit, directly from those sites.</li>
+      <li><strong>Encrypted iCloud Backup</strong> (optional, Pro) — uploads a sealed archive to your own iCloud.</li>
+      <li><strong>Device Transfer</strong> (optional, Pro) — sends an encrypted copy to a device you pair with, over your local network only.</li>
+      <li><strong>Purchases</strong> — handled by Apple's App Store.</li>
     </ul>
+    <p>The free version may also load ads from Google AdMob — see "Does Vaultic show ads?" below.</p>
+    <p>Apart from ads, if you never open the Private Browser, never enable iCloud Backup, never run a transfer, and never buy Pro, Vaultic doesn't use the network. You can confirm that with a proxy such as Charles or mitmproxy.</p>
+    <p>Two mechanical checks back this up: a pre-build script fails the build if a general-purpose networking API or any known analytics SDK appears in the source, and it confines each path above — advertising included — to the one part of the code that owns it.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>📢 Does Vaultic show ads?</h3>
+    <p>The free version may show ads provided by Google AdMob. A Vaultic Pro subscription (monthly or yearly) or the one-time Lifetime purchase removes them.</p>
+    <p>Ads never get access to your vault. Your photos, videos, documents, album names, PIN, recovery key, and Private Browser URLs are not sent to Google for advertising. Google may process some device, network, and advertising-related information to show ads — see <a href="privacy.html#advertising">Advertising</a> in our Privacy Policy.</p>
+    <p>Ads may be personalised where you allow it, and otherwise Google serves another eligible ad mode. In the European Economic Area, the UK and Switzerland — and for state privacy choices in the United States — Google's own consent message asks first, and <strong>Settings → Privacy Choices</strong> reopens it. On iOS the free version also shows Apple's tracking permission prompt; if you decline, ads still work, just without your device's advertising identifier. Pro and Lifetime never load an ad, so they never see either prompt.</p>
   </div>
 
   <div class="faq-item">
@@ -77,8 +88,9 @@
   </div>
 
   <div class="faq-item">
-    <h3>🎭 What is the Decoy Vault?</h3>
-    <p>A second, completely separate vault protected by a different PIN. When you enter the decoy PIN on the lock screen, the app opens a different vault — empty, or populated with non-sensitive content you choose. The real vault stays hidden. The real vault's wrong-PIN counter still increments when the real PIN is tried, so the decoy unlock doesn't slow down the brute-force protection on the real vault.</p>
+    <h3>🕵️ What is the Private Browser?</h3>
+    <p>A browser inside Vaultic that runs on a non-persistent session: cookies, cache, and history from a browsing session aren't kept by Vaultic once the session ends, and a built-in rule list blocks common third-party trackers.</p>
+    <p>To be clear about what it is <em>not</em>: it reduces the browsing traces kept inside Vaultic. It does not make you anonymous. The websites you visit, your internet provider, your network operator, and any VPN you use can still see your traffic in the normal way. It is a privacy convenience, not an anonymity tool.</p>
   </div>
 
   <div class="faq-item">
@@ -99,7 +111,7 @@
   <div class="contact-card">
     <h2>Still need help?</h2>
     <p>Can't find the answer above? Send us an email and we'll get back to you.</p>
-    <a href="mailto:support@vaulticapp.com" class="btn btn-primary">
+    <a href="mailto:support@vaulticapp.com" data-support-email class="btn btn-primary">
       ✉️ Email Support
     </a>
   </div>
@@ -112,11 +124,13 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="https://apps.apple.com/app/id000000000">App Store</a></li>
+      <li><a href="#" data-appstore-link>App Store</a></li>
     </ul>
-    <p>© 2026 Vaultic. Made with care. No data collected.</p>
+    <p>© 2026 Vaultic. Made with care. Your vault is encrypted on your device and never used for ads. The free version may show ads from Google AdMob.</p>
   </div>
 </footer>
+
+<script src="assets/config.js"></script>
 
 </body>
 </html>
